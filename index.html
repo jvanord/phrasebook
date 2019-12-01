@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Phrase Book</title>
+	<link rel="shortcut icon" type="image/png" sizes="128x128" href="/Content/Images/Icons/indasys128.png" />
+	<link rel="shortcut icon" type="image/png" sizes="196x196" href="/Content/Images/Icons/indasys196.png" />
+	<style>
+		body,
+		td,
+		input,
+		.title {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 14px;
+		}
+
+		h1,
+		h2,
+		h3 {
+			text-align: center;
+			color: teal;
+		}
+
+		h1 {font-size:3em;}
+
+		#error {
+			color: #900;
+			background-color: #fcc;
+			padding: 1em;
+			font-size: x-large;
+			border-radius: 1em;
+		}
+
+		#error-close {
+			float: right;
+			cursor: pointer;
+		}
+
+		.collapsed {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Phrase Book</h1>
+	<div id="error">
+		<span id="error-close">&times;</span>
+		<h4>ERROR</h4>
+		<p id="error-message">App not initialized.</p>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script src="data.js"></script>
+	<script>
+		var app = (function ($) {
+			function run() {
+				$('#error').hide();
+				if (!$) return fail('JQuery failed to load.');
+				if (!DATA || !DATA.length) return fail('No data loaded');
+
+			}
+			function fail(message, data) {
+				console.error(message, data);
+				$('#error-message').text(message);
+				$('#error').show();
+			}
+			function onErrorCloseClick(e) {
+				$('#error').hide();
+			}
+			return { run, onErrorCloseClick };
+		})(window.jQuery);
+		app.run();
+		$('#error-close').click(app.onErrorCloseClick);
+	</script>
+</body>
+
+</html>
