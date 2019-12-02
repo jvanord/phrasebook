@@ -19,7 +19,6 @@
 		}
 
 		h1 {
-			text-align: center;
 			font-size: 3em;
 		}
 
@@ -36,22 +35,53 @@
 			cursor: pointer;
 		}
 
-		.collapsed, .translation {
+		.collapsed,
+		.translation {
 			display: none;
 		}
 
-		.category-toggle, #languages li {
+		#languages li {
 			cursor: pointer;
+			list-style: none;
+			display: inline;
+			color: teal;
+			font-weight: bold;
+			margin: 1em;
+			padding: .5em 1em;
+			border: 1px solid teal;
+			border-radius: 1em;
+		}
+
+		#languages li.active {
+			background-color: teal;
+			color: white;
+		}
+
+		.category-toggle {
+			cursor: pointer;
+		}
+
+		.category li {
+			list-style: none;
+			font-size: larger;
+		}
+
+		.category li.english {
+			font-weight: bold;
+		}
+
+		.category li.translation {
+			font-style: italic;
 		}
 	</style>
 </head>
 
 <body>
 	<h1>Phrase Book</h1>
-	<div id="error">
+	<div id="error" style="display: none;">
 		<span id="error-close">&times;</span>
 		<h4>ERROR</h4>
-		<p id="error-message">App not initialized.</p>
+		<p id="error-message"></p>
 	</div>
 	<ul id='languages'>
 		<li data-language='dutch'>Dutch</li>
@@ -71,6 +101,7 @@
 					addTranslation(DATA[i]);
 				}
 				$('.category').first().slideDown();
+				$('#languages li').first().trigger('click');
 			}
 			function fail(message, data) {
 				console.error(message, data);
@@ -119,6 +150,8 @@
 			}
 			function onLanguageClick(e) {
 				var targetLang = $(e.target).data('language');
+				$('#languages li').removeClass('active');
+				$(e.target).addClass('active');
 				$('.translation').slideUp();
 				$('.' + targetLang).slideDown();
 			};
