@@ -17,7 +17,7 @@ var DATA = [
 	  "category": "Basic",
 	  "english": "Good Afternoon",
 	  "dutch": "Goedemiddag",
-	  "french": "Bonne apr�s-midi",
+	  "french": "Bonne après-midi",
 	  "italian": "Buon pomeriggio"
 	},
 	{
@@ -38,35 +38,35 @@ var DATA = [
 	  "category": "Basic",
 	  "english": "How are you?",
 	  "dutch": "Hoe gaat het (met u)?",
-	  "french": "Comment allez-vous? / Comment �a va?",
+	  "french": "Comment allez-vous? / Comment ça va?",
 	  "italian": "Come sta/stai?"
 	},
 	{
 	  "category": "Basic",
 	  "english": "Good / Fine",
 	  "dutch": "Goed",
-	  "french": "Bien / �a va",
+	  "french": "Bien / ça va",
 	  "italian": "(Molto) Bene"
 	},
 	{
 	  "category": "Basic",
 	  "english": "See you Later",
 	  "dutch": "Tot ziens",
-	  "french": "� toute � l'heure!",
+	  "french": "À bientôt / À toute à l'heure!",
 	  "italian": "Ci Vediamo"
 	},
 	{
 	  "category": "Basic",
 	  "english": "Goodbye",
 	  "dutch": "Vaarwel / Dag / Hoi",
-	  "french": "Au revoir / � bient�t",
+	  "french": "Au revoir / À bientôt",
 	  "italian": "Arrivederci / Ciao"
 	},
 	{
 	  "category": "Basic",
 	  "english": "Please",
 	  "dutch": "Alstublieft / Alsjeblieft",
-	  "french": "S'il vous pla�t",
+	  "french": "S'il vous plaît?",
 	  "italian": "per favore"
 	},
 	{
@@ -88,7 +88,7 @@ var DATA = [
 	  "english": "Yes",
 	  "dutch": "Ja",
 	  "french": "Oui",
-	  "italian": "s�"
+	  "italian": "Sì"
 	},
 	{
 	  "category": "Basic",
@@ -101,7 +101,7 @@ var DATA = [
 	  "category": "Basic",
 	  "english": "Maybe",
 	  "dutch": "Misschien",
-	  "french": "Peut-�tre",
+	  "french": "Peut-être",
 	  "italian": "Forse"
 	},
 	{
@@ -115,7 +115,7 @@ var DATA = [
 	  "category": "Basic",
 	  "english": "I'm Sorry",
 	  "dutch": "Sorry / Het spijt me",
-	  "french": "Je suis d�sol�",
+	  "french": "Je suis désolé",
 	  "italian": "Mi dispiace"
 	},
 	{
@@ -128,8 +128,8 @@ var DATA = [
 	{
 	  "category": "Basic",
 	  "english": "Merry Christmas",
-	  "dutch": "Prettige kerstdagen / vrolijk kerstfeest",
-	  "french": "joyeux No�l",
+	  "dutch": "Vrolijk kerstfeest / Prettige kerstdagen",
+	  "french": "joyeux Noël",
 	  "italian": "Buon Natale"
 	},
 	{
@@ -143,15 +143,15 @@ var DATA = [
 	  "category": "Help",
 	  "english": "Can you please help me?",
 	  "dutch": "Kunt u mij helpen?",
-	  "french": "Pouvez-vous m'aider s'il vous pla�t?",
+	  "french": "Pouvez-vous m'aider S'il vous plaît??",
 	  "italian": "Potete per favore aiutarmi?"
 	},
 	{
 	  "category": "Help",
 	  "english": "Where is the bathroom?",
 	  "dutch": "Waar is het toilet?",
-	  "french": "O� sont les toilettes?",
-	  "italian": "Dov'� il bagno?"
+	  "french": "Où sont les toilettes?",
+	  "italian": "Dov'è il bagno??"
 	},
 	{
 	  "category": "Help",
@@ -172,20 +172,20 @@ var DATA = [
 	  "english": "More slowly please",
 	  "dutch": "Langzamer praten alstublieft",
 	  "french": "Plus lentement si'l vous plait",
-	  "italian": "Pi� lentamente per favore"
+	  "italian": "Più lentamente per favore"
 	},
 	{
 	  "category": "Help",
 	  "english": "Please repeat that",
 	  "dutch": "Herall dat alstublieft",
-	  "french": "S'il vous plait, r�p�tez cela",
+	  "french": "Répéter, s'il vous plaît",
 	  "italian": "Per favore Ripeti"
 	},
 	{
 	  "category": "Help",
-	  "english": "We / I do not speak <this language>",
-	  "dutch": "Wij spreken geen / Ik spreek geen Nederlands",
-	  "french": "Nous/Je ne parlons/parle pas fran�ais",
+	  "english": "We/I do not speak <this language>",
+	  "dutch": "Wij/Ik spreken/spreek geen Nederlands",
+	  "french": "Nous/Je ne parlons/parle pas français",
 	  "italian": "Non parliamo/parlo italiano"
 	},
 	{
@@ -213,7 +213,7 @@ var DATA = [
 	  "category": "Emergency",
 	  "english": "Doctor",
 	  "dutch": "Dokter",
-	  "french": "M�decin",
+	  "french": "Médecin",
 	  "italian": "Medico"
 	},
 	{
@@ -227,21 +227,21 @@ var DATA = [
 	  "category": "Emergency",
 	  "english": "Hospital",
 	  "dutch": "Ziekenhuis",
-	  "french": "H�pital",
+	  "french": "Hôpital",
 	  "italian": "Ospedale"
 	},
 	{
 	  "category": "Family",
 	  "english": "We are Americans",
 	  "dutch": "Wij zijn Amerikanen",
-	  "french": "Nous sommes Am�ricains",
+	  "french": "Nous sommes Américains",
 	  "italian": "Siamo americani"
 	},
 	{
 	  "category": "Family",
 	  "english": "We are from the US / Florida",
 	  "dutch": "Wij komen uit de Verenigde Staten",
-	  "french": "Nous venon des �tats Unis / Floride",
+	  "french": "Nous venon des États-Unis / Floride",
 	  "italian": "Siamo degli Stati Uniti / Florida"
 	},
 	{
@@ -249,7 +249,7 @@ var DATA = [
 	  "english": "This is my wife and her parents",
 	  "dutch": "Dit zijn mijn vrouw en haar ouders",
 	  "french": "Ceci est ma femme et ses parents",
-	  "italian": "Questa � mia moglie e i suoi genitori"
+	  "italian": "Questa è mia moglie e i suoi genitori"
 	},
 	{
 	  "category": "Family",
@@ -269,29 +269,29 @@ var DATA = [
 	  "category": "Family",
 	  "english": "Her mother",
 	  "dutch": "Haar moeder",
-	  "french": "Sa m�re",
+	  "french": "Sa mère",
 	  "italian": "Sua madre"
 	},
 	{
 	  "category": "Family",
 	  "english": "Her father",
 	  "dutch": "Haar vader",
-	  "french": "Son p�re",
+	  "french": "Son père",
 	  "italian": "Suo padre"
 	},
 	{
 	  "category": "Family",
 	  "english": "From Vietnam",
 	  "dutch": "Uit Vietname",
-	  "french": "Du Vi�t Nam",
+	  "french": "Du Vièt Nam",
 	  "italian": "Dal Vietnam"
 	},
 	{
 	  "category": "Restaurant",
 	  "english": "Two coffees please",
 	  "dutch": "Vier koffie alstublieft",
-	  "french": "Deux caf�s s'il vous pla�t",
-	  "italian": "Due caff� per favore"
+	  "french": "Deux cafés S'il vous plaît?",
+	  "italian": "Due caffè per favore"
 	},
 	{
 	  "category": "Restaurant",
@@ -304,7 +304,7 @@ var DATA = [
 	  "category": "Restaurant",
 	  "english": "How much is this / that?",
 	  "dutch": "Wat kost dit / dat?",
-	  "french": "Combien �a co�te / est-ce?",
+	  "french": "Combien ça coûte / est-ce?",
 	  "italian": "Quanto costa questo / quello?"
 	},
 	{
@@ -318,7 +318,7 @@ var DATA = [
 	  "category": "Restaurant",
 	  "english": "The menu please",
 	  "dutch": "Het menu alstublieft",
-	  "french": "Le menu s'il vous plait",
+	  "french": "Le menu S'il vous plaît?",
 	  "italian": "Il menu per favore"
 	},
 	{
@@ -346,14 +346,14 @@ var DATA = [
 	  "category": "Restaurant",
 	  "english": "Cheers",
 	  "dutch": "Proost",
-	  "french": "� votre sant�",
+	  "french": "À votre santé",
 	  "italian": "Salute/Saluti/Cin Cin"
 	},
 	{
 	  "category": "Restaurant",
 	  "english": "Check please",
-	  "dutch": "De�rekening�graag",
-	  "french": "L'addition s'il vous plait",
+	  "dutch": "De rekening graag",
+	  "french": "L'addition S'il vous plaît?",
 	  "italian": "Il conto, per favore"
 	},
 	{
@@ -464,7 +464,7 @@ var DATA = [
 	{
 	  "category": "Numbers",
 	  "english": 1,
-	  "dutch": "E�n",
+	  "dutch": "één",
 	  "french": "un",
 	  "italian": "uno"
 	},
@@ -611,14 +611,14 @@ var DATA = [
 	{
 	  "category": "Numbers",
 	  "english": 22,
-	  "dutch": "twee�ntwintig",
+	  "dutch": "tweeëntwintig",
 	  "french": "vingt-deux",
 	  "italian": "ventidue"
 	},
 	{
 	  "category": "Numbers",
 	  "english": 23,
-	  "dutch": "drie�ntwintig",
+	  "dutch": "drieëntwintig",
 	  "french": "vingt-trois",
 	  "italian": "ventitre"
 	},

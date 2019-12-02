@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta charset="utf-8">
 	<title>Phrase Book</title>
 	<style>
 		body,
@@ -64,6 +65,7 @@
 		.category li {
 			list-style: none;
 			font-size: larger;
+			text-transform: capitalize;
 		}
 
 		.category li.english {
@@ -90,7 +92,7 @@
 	</ul>
 	<div id="categories"></div>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-	<script src="data.js"></script>
+	<script src="data.js" charset="utf-8"></script>
 	<script>
 		var app = (function ($) {
 			function run() {
