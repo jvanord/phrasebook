@@ -17,11 +17,13 @@
 		h1,
 		h2,
 		h3 {
-			text-align: center;
 			color: teal;
 		}
 
-		h1 {font-size:3em;}
+		h1 {
+			text-align: center;
+			font-size: 3em;
+		}
 
 		#error {
 			color: #900;
@@ -36,7 +38,7 @@
 			cursor: pointer;
 		}
 
-		.collapsed {
+		.x-collapsed {
 			display: none;
 		}
 	</style>
@@ -49,6 +51,7 @@
 		<h4>ERROR</h4>
 		<p id="error-message">App not initialized.</p>
 	</div>
+	<div id="categories"></div>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="data.js"></script>
 	<script>
@@ -57,7 +60,9 @@
 				$('#error').hide();
 				if (!$) return fail('JQuery failed to load.');
 				if (!DATA || !DATA.length) return fail('No data loaded');
-
+				for (var i = 0; i < DATA.length; i++) {
+					addTranslation(DATA[i]);
+				}
 			}
 			function fail(message, data) {
 				console.error(message, data);
@@ -67,10 +72,40 @@
 			function onErrorCloseClick(e) {
 				$('#error').hide();
 			}
+			function categoryExists(name) {
+				var catId
+				return !!($('#category-' + name).length);
+			}
+			function createOrGetCategory(name) {
+				var catId = 'category-' + name;
+				if ($('#' + catId).length) return catId;
+				$('#categories').append($('<h2/>').attr('target', catId).addClass('category-toggle').text(name));
+				$('#categories').append($('<div/>').attr('id', catId).addClass('category collapsed'));
+				return catId;
+			}
+			function isValidTranslation(data) {
+				if (!data || !data.category) return false;
+				if (typeof data.english === 'number')
+					return true;
+				else if (!data.english)
+					return false;
+				return true;
+			}
+			function addTranslation(data) {
+				if (!isValidTranslation(data))
+					return fail('Translation data not valid.', data);
+				var catId = createOrGetCategory(data.category);
+				var $list = $('<ul/>')
+					.append($('<li/>').addClass('english').text(data.english))
+					.append($('<li/>').addClass('dutch').text(data.dutch || 'N/A'))
+					.append($('<li/>').addClass('french').text(data.french || 'N/A'))
+					.append($('<li/>').addClass('italian').text(data.italian || 'N/A'));
+				$('#' + catId).append($($list));
+			}
 			return { run, onErrorCloseClick };
 		})(window.jQuery);
-		app.run();
 		$('#error-close').click(app.onErrorCloseClick);
+		app.run();
 	</script>
 </body>
 
