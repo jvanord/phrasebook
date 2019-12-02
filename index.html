@@ -3,8 +3,6 @@
 
 <head>
 	<title>Phrase Book</title>
-	<link rel="shortcut icon" type="image/png" sizes="128x128" href="/Content/Images/Icons/indasys128.png" />
-	<link rel="shortcut icon" type="image/png" sizes="196x196" href="/Content/Images/Icons/indasys196.png" />
 	<style>
 		body,
 		td,
@@ -38,8 +36,12 @@
 			cursor: pointer;
 		}
 
-		.x-collapsed {
+		.collapsed, .translation {
 			display: none;
+		}
+
+		.category-toggle, #languages li {
+			cursor: pointer;
 		}
 	</style>
 </head>
@@ -51,6 +53,11 @@
 		<h4>ERROR</h4>
 		<p id="error-message">App not initialized.</p>
 	</div>
+	<ul id='languages'>
+		<li data-language='dutch'>Dutch</li>
+		<li data-language='french'>French</li>
+		<li data-language='italian'>Italian</li>
+	</ul>
 	<div id="categories"></div>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<script src="data.js"></script>
@@ -63,6 +70,7 @@
 				for (var i = 0; i < DATA.length; i++) {
 					addTranslation(DATA[i]);
 				}
+				$('.category').first().slideDown();
 			}
 			function fail(message, data) {
 				console.error(message, data);
@@ -79,7 +87,7 @@
 			function createOrGetCategory(name) {
 				var catId = 'category-' + name;
 				if ($('#' + catId).length) return catId;
-				$('#categories').append($('<h2/>').attr('target', catId).addClass('category-toggle').text(name));
+				$('#categories').append($('<h2/>').attr('target', catId).addClass('category-toggle').text(name).on('click', onCategoryHeadingClick));
 				$('#categories').append($('<div/>').attr('id', catId).addClass('category collapsed'));
 				return catId;
 			}
@@ -97,14 +105,27 @@
 				var catId = createOrGetCategory(data.category);
 				var $list = $('<ul/>')
 					.append($('<li/>').addClass('english').text(data.english))
-					.append($('<li/>').addClass('dutch').text(data.dutch || 'N/A'))
-					.append($('<li/>').addClass('french').text(data.french || 'N/A'))
-					.append($('<li/>').addClass('italian').text(data.italian || 'N/A'));
+					.append($('<li/>').addClass('translation dutch').text(data.dutch || 'N/A'))
+					.append($('<li/>').addClass('translation french').text(data.french || 'N/A'))
+					.append($('<li/>').addClass('translation italian').text(data.italian || 'N/A'));
 				$('#' + catId).append($($list));
 			}
-			return { run, onErrorCloseClick };
+			function onCategoryHeadingClick(e) {
+				toggleCategory($(e.target).attr('target'));
+			}
+			function toggleCategory(catId) {
+				$('.category').slideUp();
+				$('#' + catId).slideDown();
+			}
+			function onLanguageClick(e) {
+				var targetLang = $(e.target).data('language');
+				$('.translation').slideUp();
+				$('.' + targetLang).slideDown();
+			};
+			return { run, onErrorCloseClick, onLanguageClick };
 		})(window.jQuery);
 		$('#error-close').click(app.onErrorCloseClick);
+		$('body').on('click', '#languages li', app.onLanguageClick);
 		app.run();
 	</script>
 </body>
